@@ -286,9 +286,9 @@ The default [`Cache`](https://mu-io.github.io/ts-japi/classes/cache.html) uses t
 
 We stress the following: There are many clients readily built to consume JSON:API endpoints (see [here](https://jsonapi.org/implementations/)). It is **highly recommended** to use them and only use this for serialization. It would be an [anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern) **not** to do so since the problem of serialization and deserialization generally have distinct solutions (think [P vs. NP](https://en.wikipedia.org/wiki/P_versus_NP_problem)).
 
-For inquisitive developers: To be precise, serialization is optimized by increasing runtime data storage and decreasing computation time (with e.g., caching and stored functions). Deserialization is somewhat dual to serialization; it is increasingly computational with storage proportional to the desired formatting. Perhaps an abstract directed binary tree (ADBT) could be helpful? It turns out the design of JSON:API is not very tree-like (think about the locations the relationships and identifiers can go), so by the time data gets transfigured into an ADBT, we would have finished serializing the data directly.
-
 tl;dr: Serialization and deserialization are different types of actions for different paradigms, therefore they **must** be in different packages.
+
+For inquisitive developers: To be precise, serialization is optimized by increasing runtime data storage and decreasing computation time (with e.g., caching and stored functions). Deserialization is somewhat dual to serialization; it is increasingly computational with storage proportional to the desired formatting. Perhaps an abstract directed binary tree (ADBT) could be helpful? It turns out the design of JSON:API is not very tree-like (think about the locations the relationships and identifiers can go), so by the time data gets transfigured into an ADBT, we would have finished serializing the data directly.
 
 ## Remarks
 
